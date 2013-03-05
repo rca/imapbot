@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+import os
+
+from imapbot.bot import IMAPBot
+
+if __name__ == '__main__':
+    host = os.environ['IMAPBOT_HOST']
+    username = os.environ['IMAPBOT_USERNAME']
+    password = os.environ['IMAPBOT_PASSWORD']
+
+    reader = IMAPBot(host, username, password)
+    try:
+        reader.run()
+    except KeyboardInterrupt:
+        reader.quit()
