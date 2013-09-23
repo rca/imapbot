@@ -55,8 +55,8 @@ class Message(object):
 
     @property
     def html(self):
-        return self.parsed['text/html']
+        return self.parsed.get('text/html')
 
     @property
     def plain(self):
-        return self.parsed['text/plain']
+        return self.parsed.get('text/plain')

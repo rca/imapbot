@@ -65,7 +65,7 @@ class IMAPBot(object):
         with open('message.txt', 'ab') as fh:
             fh.write('{}\n\n'.format(message.text))
 
-        print message.plain
+        print message.plain or message.html or 'no message'
 
     def idle(self):
         if self._is_idle:
